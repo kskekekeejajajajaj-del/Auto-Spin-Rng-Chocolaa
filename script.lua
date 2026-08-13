@@ -1,24 +1,28 @@
 -- ============================================
--- AUTO SPIN RNG COMBINADO
+-- AUTO SPIN RNG COMBINADO (CHOCOLA + JNKIE)
 -- ============================================
 
--- Script 1: API Jnkie
+-- Ejecutar el Script de Chocola
 task.spawn(function()
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/api-jnkie-com/script/main/Auto-Spin-Rng.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/chocolascript-glitch/Chocola-Auto-Spin-RNG/refs/heads/main/script.lua"))()
     end)
     if not success then
-        warn("Error cargando Script 1 (Jnkie): " .. tostring(err))
+        warn("Error cargando Script de Chocola: " .. tostring(err))
     end
 end)
 
--- Esperar un momento para evitar conflictos
-task.wait(0.5)
+-- Esperar un microsegundo para evitar conflictos de inicio
+task.wait(0.2)
 
--- Script 2: Chocola
-local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/chocolascript-glitch/Chocola-Auto-Spin-RNG/refs/heads/main/script.lua"))()
+-- Ejecutar el Script de Jnkie
+task.spawn(function()
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/api-jnkie-com/script/main/AUTOSPINRNG.lua"))()
+    end)
+    if not success then
+        warn("Error cargando Script de Jnkie: " .. tostring(err))
+    end
 end)
-if not success then
-    warn("Error cargando Script 2 (Chocola): " .. tostring(err))
-end
+
+print("¡Ambos Auto-Spins han sido activados!")
