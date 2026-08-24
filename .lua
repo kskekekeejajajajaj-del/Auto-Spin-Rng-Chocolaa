@@ -1,28 +1,18 @@
--- ============================================
--- SCRIPT COMBINADO: CHOCOLA AUTO-SPIN + AUTO-SPIN RNG
--- ============================================
-
--- 1. Ejecutar el primer script (Chocola Auto-Spin)
+-- Script Combinado - 𝔍𝔲𝔩𝔵𝔖𝔠𝔯𝔦𝔭𝔱
 task.spawn(function()
     local success, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/chocolascript-glitch/Chocola-Auto-Spin-RNG/refs/heads/main/script.lua"))()
     end)
     if not success then
-        warn("Error cargando Chocola Auto-Spin: " .. tostring(err))
+        warn("Error en el primer script: " .. tostring(err))
     end
 end)
 
--- Pequeña pausa para evitar conflictos al iniciar ambos
-task.wait(0.2)
-
--- 2. Ejecutar el segundo script (AutoSpinRng)
 task.spawn(function()
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/api-scriptsab/scripts/main/AutoSpinRng.lua"))()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/script-luasab/d5421a82fd4da8dda230b7a9b81e4748/raw/AUTOSPINRNG.lua"))()
     end)
     if not success then
-        warn("Error cargando AutoSpinRng: " .. tostring(err))
+        warn("Error en el segundo script: " .. tostring(err))
     end
 end)
-
-print("¡Ambos scripts de auto-spin han sido combinados con éxito!")
